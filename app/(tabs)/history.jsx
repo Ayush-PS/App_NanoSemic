@@ -17,7 +17,7 @@ import { createVideoPost } from "../../lib/appwrite";
 import { CustomButton, FormField } from "../../components";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
-const Create = () => {
+const History = () => {
   const { user } = useGlobalContext();
   const [uploading, setUploading] = useState(false);
   const [form, setForm] = useState({
@@ -94,7 +94,7 @@ const Create = () => {
       <ScrollView className="px-4 my-6">
         <Text className="text-2xl text-white font-psemibold">Upload Video</Text>
 
-        <FormField
+        {/* <FormField
           title="Video Title"
           value={form.title}
           placeholder="Give your video a catchy title..."
@@ -172,10 +172,10 @@ const Create = () => {
           handlePress={submit}
           containerStyles="mt-7"
           isLoading={uploading}
-        />
+        /> */}
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-export default Create;
+export default History;

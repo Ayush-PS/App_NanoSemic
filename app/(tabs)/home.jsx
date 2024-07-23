@@ -20,25 +20,25 @@ const Home = () => {
   // };
 
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const [hamburgerMenuVisible, setHamburgerMenuVisible] = useState(false);
-  const [selectedDevice, setSelectedDevice] = useState('');
+  // const [hamburgerMenuVisible, setHamburgerMenuVisible] = useState(false);
+  // const [selectedDevice, setSelectedDevice] = useState('');
 
 
-  // const navigation = useNavigation < HomeScreenNavigationProp > ();
+  // // const navigation = useNavigation < HomeScreenNavigationProp > ();
 
-  const handleSelectDevice = (device) => {
-    setSelectedDevice(device);
-    setDropdownVisible(false);
-    // navigation.navigate('Device', { selectedDevice: device });
-  };
+  // const handleSelectDevice = (device) => {
+  //   setSelectedDevice(device);
+  //   setDropdownVisible(false);
+  //   // navigation.navigate('Device', { selectedDevice: device });
+  // };
 
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
   };
 
-  const toggleHamburgerMenu = () => {
-    setHamburgerMenuVisible(!hamburgerMenuVisible);
-  };
+  // const toggleHamburgerMenu = () => {
+  //   setHamburgerMenuVisible(!hamburgerMenuVisible);
+  // };
 
   // one flatlist
   // with list header
@@ -103,34 +103,8 @@ const Home = () => {
     //     }
     //   />
     // </SafeAreaView>
-    <SafeAreaView style={styles.safeArea}>
-      <View style={styles.header}>
-        <Image
-          style={styles.himg}
-          source={require("../../assets/NanoSemicLogo_whiteBG.jpg")}
-        />
-        <Text style={styles.headerText}>NANO SEMIC</Text>
-        <TouchableOpacity style={styles.hamburgerMenu} onPress={toggleHamburgerMenu}>
-          <Ionicons name="menu" size={24} color="black" />
-        </TouchableOpacity>
-      </View>
-
-      {hamburgerMenuVisible && (
-
-
-        <View style={styles.hamburgerMenuDropdown}>
-          <TouchableOpacity style={styles.hamburgerMenuItem}>
-            <Text style={styles.hamburgerMenuText}>Add Device</Text>
-          </TouchableOpacity>
-          {/* <TouchableOpacity style={styles.hamburgerMenuItem}>
-            <Text style={styles.hamburgerMenuText}>Device 2</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.hamburgerMenuItem}>
-            <Text style={styles.hamburgerMenuText}>Device 3</Text>
-          </TouchableOpacity> */}
-        </View>
-
-      )}
+    <>
+    <View style={styles.safeArea}>
 
       <View style={styles.imgContainer}>
         <Image
@@ -142,14 +116,14 @@ const Home = () => {
           source={require("../../assets/Device.png")}
         />
       </View>
-      <View>
-
+      
+</View>
+      <View style={styles.container}>
         <TouchableOpacity style={styles.addButton} onPress={toggleDropdown}>
           <Text style={styles.addButtonText}>SELECT DEVICE</Text>
           {dropdownVisible ? <Ionicons name="arrow-up" size={24} color="black" /> : <Ionicons name="arrow-down" size={24} color="black" />}
         </TouchableOpacity>
-      </View>
-
+      
       {dropdownVisible && (
         <View style={styles.dropdown}>
           <ScrollView style={{ width: '100%' }}>
@@ -161,7 +135,9 @@ const Home = () => {
           </ScrollView>
         </View>
       )}
-    </SafeAreaView>
+      
+    </View>
+    </>
   );
 };
 
@@ -179,19 +155,17 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "space-between",
     padding: 16,
-    paddingTop: "10%",
     backgroundColor: "#fff",
     marginBottom: 20,
   },
   himg: {
-    width: 50,
-    height: 50,
-    margin: 5,
-    borderRadius: 10,
+    width: 55,
+    height: 55,
+
   },
   headerText: {
     fontWeight: "400",
-    fontSize: 18,
+    fontSize: 20,
   },
   hamburgerMenu: {
     padding: 10,
@@ -253,10 +227,8 @@ const styles = StyleSheet.create({
   dropdown: {
     backgroundColor: "#fff",
     borderRadius: 10,
-    padding: 10,
-    // margin:10,
-    position: "absolute",
-    top: 620,
+  
+    
     alignItems: "center",
     width: 200,
     shadowColor: "#000",
@@ -278,5 +250,11 @@ const styles = StyleSheet.create({
   },
   dropdownText: {
     fontSize: 16,
+  },
+  container: {
+    backgroundColor: "#fff",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "space-between",
   },
 });

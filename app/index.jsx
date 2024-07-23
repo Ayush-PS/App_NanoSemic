@@ -64,23 +64,17 @@ const Welcome = () => {
     //   <StatusBar backgroundColor="#161622" style="light" />
     // </SafeAreaView>
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
+     
         <View style={styles.header}>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
             <Image
               style={styles.himg}
               source={require("../assets/NanoSemicLogo_whiteBG.jpg")}
             />
-            <Text style={{ fontSize: 19, color: "white", marginRight: "45%" }}>
+            <Text style={{ fontSize: 19, color: "white" }}>
               NANO SEMIC
             </Text>
-          </View>
+            <View style={{ width: 55, height: 55, borderRadius: 40 }}></View>
+
           {/* <TouchableOpacity>
             <Text style={styles.headerText}>Sign Up</Text>
           </TouchableOpacity> */}
@@ -116,7 +110,7 @@ const Welcome = () => {
             </Text>
           </TouchableOpacity>
         </View>
-      </View>
+         <StatusBar style="light" />
     </SafeAreaView>
   );
 };
@@ -125,29 +119,25 @@ export default Welcome;
 
 const styles = StyleSheet.create({
   safeArea: {
-    flex: 1,
+    height: "100%",
     backgroundColor: "#001840",
-  },
-  container: {
-    flex: 1,
   },
   header: {
     flex: 0.07,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 16,
-    paddingTop: "10%",
-    backgroundColor: "#001840",
+    paddingLeft: 20,
+    paddingRight: 20,
   },
   himg: {
-    width: 50,
-    height: 50,
+    width: 55,
+    height: 55,
     borderRadius: 40,
     marginRight: 20,
   },
   headerText: {
-    fontSize: 19,
+    fontSize: 20,
     color: "white",
   },
   main: {
