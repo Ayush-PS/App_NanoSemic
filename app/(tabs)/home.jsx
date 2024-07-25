@@ -19,7 +19,7 @@ const Home = () => {
   //   setRefreshing(false);
   // };
 
-  const [dropdownVisible, setDropdownVisible] = useState(false);
+  // const [dropdownVisible, setDropdownVisible] = useState(false);
   // const [hamburgerMenuVisible, setHamburgerMenuVisible] = useState(false);
   // const [selectedDevice, setSelectedDevice] = useState('');
 
@@ -32,9 +32,9 @@ const Home = () => {
   //   // navigation.navigate('Device', { selectedDevice: device });
   // };
 
-  const toggleDropdown = () => {
-    setDropdownVisible(!dropdownVisible);
-  };
+  // const toggleDropdown = () => {
+  //   setDropdownVisible(!dropdownVisible);
+  // };
 
   // const toggleHamburgerMenu = () => {
   //   setHamburgerMenuVisible(!hamburgerMenuVisible);
@@ -104,27 +104,27 @@ const Home = () => {
     //   />
     // </SafeAreaView>
     <>
-    <View style={styles.safeArea}>
+      <View style={styles.safeArea}>
 
-      <View style={styles.imgContainer}>
-        <Image
-          style={styles.logoImg}
-          source={require("../../assets/test.png")}
-        />
-        <Image
-          style={styles.centerImg}
-          source={require("../../assets/Device.png")}
-        />
+        <View style={styles.imgContainer}>
+          <Image
+            style={styles.logoImg}
+            source={require("../../assets/test.png")}
+          />
+          <Image
+            style={styles.centerImg}
+            source={require("../../assets/Device.png")}
+          />
+        </View>
+
       </View>
-      
-</View>
       <View style={styles.container}>
-        <TouchableOpacity style={styles.addButton} onPress={toggleDropdown}>
-          <Text style={styles.addButtonText}>SELECT DEVICE</Text>
-          {dropdownVisible ? <Ionicons name="arrow-up" size={24} color="black" /> : <Ionicons name="arrow-down" size={24} color="black" />}
+        <TouchableOpacity style={styles.addButton} onPress={() => (1)}>
+          <Text style={styles.addButtonText}>ADD DEVICE </Text>
+          <Ionicons name="add" size={24} color="black" />
         </TouchableOpacity>
-      
-      {dropdownVisible && (
+
+        {/* {dropdownVisible && (
         <View style={styles.dropdown}>
           <ScrollView style={{ width: '100%' }}>
             {['device 1', 'device 2', 'device 3', 'device 4', 'device 5', 'device 6'].map((device) => (
@@ -134,9 +134,9 @@ const Home = () => {
             ))}
           </ScrollView>
         </View>
-      )}
-      
-    </View>
+      )} */}
+
+      </View>
     </>
   );
 };
@@ -217,7 +217,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginTop: 40,
     marginBottom: 10,
-    justifyContent: "center"
+    justifyContent: "center",
+    marginBottom: '10%',
   },
   addButtonText: {
     fontSize: 16,
@@ -227,8 +228,8 @@ const styles = StyleSheet.create({
   dropdown: {
     backgroundColor: "#fff",
     borderRadius: 10,
-  
-    
+
+
     alignItems: "center",
     width: 200,
     shadowColor: "#000",
@@ -253,8 +254,9 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: "#fff",
-    flex: 1,
+    // marginBottom: 20,
     alignItems: "center",
     justifyContent: "space-between",
+
   },
 });

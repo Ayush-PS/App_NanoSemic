@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { Redirect, Tabs } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
-import {  FlatList, Image, RefreshControl, Text, View, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
+import { FlatList, Image, RefreshControl, Text, View, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { icons } from "../../constants";
 import { Loader } from "../../components";
@@ -31,7 +31,7 @@ const TabLayout = () => {
   const { loading, isLogged } = useGlobalContext();
 
   if (!loading && !isLogged) return <Redirect href="/sign-in" />;
- 
+
   const [hamburgerMenuVisible, setHamburgerMenuVisible] = useState(false);
   const [selectedDevice, setSelectedDevice] = useState('');
 
@@ -52,7 +52,7 @@ const TabLayout = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-     <View style={styles.header}>
+      <View style={styles.header}>
         <Image
           style={styles.himg}
           source={require("../../assets/NanoSemicLogo_whiteBG.jpg")}
@@ -68,7 +68,8 @@ const TabLayout = () => {
 
         <View style={styles.hamburgerMenuDropdown}>
           <TouchableOpacity style={styles.hamburgerMenuItem}>
-            <Text style={styles.hamburgerMenuText}>Add Device</Text>
+            <Ionicons name="information-circle" size={24} color="black" />
+            <Text style={styles.hamburgerMenuText}> About</Text>
           </TouchableOpacity>
           {/* <TouchableOpacity style={styles.hamburgerMenuItem}>
             <Text style={styles.hamburgerMenuText}>Device 2</Text>
@@ -77,7 +78,7 @@ const TabLayout = () => {
             <Text style={styles.hamburgerMenuText}>Device 3</Text>
           </TouchableOpacity> */}
         </View>
-            )}
+      )}
 
       <Tabs
         screenOptions={{
@@ -159,14 +160,14 @@ const TabLayout = () => {
 
       <Loader isLoading={loading} />
       <StatusBar backgroundColor="#001840" style="light" />
-      </SafeAreaView>
+    </SafeAreaView>
   );
 };
 
 export default TabLayout;
 const styles = StyleSheet.create({
   safeArea: {
-   flex: 1,
+    flex: 1,
   },
   header: {
     flexDirection: "row",
@@ -190,7 +191,7 @@ const styles = StyleSheet.create({
   },
   hamburgerMenuDropdown: {
     position: "absolute",
-    top: 125,
+    top: '15%',
     right: 25,
     backgroundColor: "#fff",
     borderRadius: 10,
@@ -203,9 +204,10 @@ const styles = StyleSheet.create({
 
   },
   hamburgerMenuItem: {
+    flexDirection: 'row',
     padding: 10,
-    borderBottomWidth: 1,
-    borderColor: "#ccc",
+    // borderBottomWidth: 1,
+    // borderColor: "#ccc",
   },
   hamburgerMenuText: {
     fontSize: 16,
