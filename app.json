@@ -16,9 +16,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSBluetoothPeripheralUsageDescription": "We use this to connect to Bluetooth devices",
+        "NSLocationWhenInUseUsageDescription": "We use your location to enable Bluetooth connectivity"
+      }
     },
     "android": {
+      "permissions": [
+        "BLUETOOTH",
+        "BLUETOOTH_ADMIN",
+        "ACCESS_FINE_LOCATION"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -30,7 +39,8 @@
     },
     "plugins": [
       "expo-router",
-      "expo-font"
+      "expo-font",
+     "@config-plugins/react-native-ble-plx"
     ],
     "extra": {
       "router": {
