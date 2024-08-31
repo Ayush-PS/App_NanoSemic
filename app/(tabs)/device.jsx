@@ -3,16 +3,16 @@ import { useState } from "react";
 
 const DATA = [
     {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'Device 1',
+        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+        title: 'Device 1',
     },
     {
-      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      title: 'Device 2',
+        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+        title: 'Device 2',
     },
     {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Device 3',
+        id: '58694a0f-3da1-471f-bd96-145571e29d72',
+        title: 'Device 3',
     },
 ];
 
@@ -26,8 +26,8 @@ const Device = () => {
     const [selectedId, setSelectedId] = useState(null);
 
     const renderItem = ({ item }) => {
-        const backgroundColor = item.id === selectedId ? '#6e3b6e' : '#f9c2ff';
-        const color = item.id === selectedId ? 'white' : 'black';
+        const backgroundColor = item.id === selectedId ? '#FFA001' : '#001840';
+        const color = item.id === selectedId ? 'black' : 'white';
 
         return (
             <Item
@@ -158,8 +158,9 @@ const styles = StyleSheet.create({
     },
     item: {
         padding: 20,
-        marginVertical: 8,
-        marginHorizontal: 16,
+        marginVertical: 4,
+        marginHorizontal: 8,
+        borderRadius: 20,
     },
     title: {
         fontSize: 32,

@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { Redirect, Tabs } from "expo-router";
+import { Link, Redirect, Stack, Tabs } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 import { FlatList, Image, RefreshControl, Text, View, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
@@ -67,10 +67,10 @@ const TabLayout = () => {
 
 
         <View style={styles.hamburgerMenuDropdown}>
-          <TouchableOpacity style={styles.hamburgerMenuItem}>
+          <Link style={styles.hamburgerMenuItem} href='/about' onPress={toggleHamburgerMenu}>
             <Ionicons name="information-circle" size={24} color="black" />
             <Text style={styles.hamburgerMenuText}> About</Text>
-          </TouchableOpacity>
+          </Link>
           {/* <TouchableOpacity style={styles.hamburgerMenuItem}>
             <Text style={styles.hamburgerMenuText}>Device 2</Text>
           </TouchableOpacity>
@@ -79,6 +79,11 @@ const TabLayout = () => {
           </TouchableOpacity> */}
         </View>
       )}
+      {/* <Stack>
+
+        <Stack.Screen name="home" options={{ headerShown: false }} /> 
+        <Stack.Screen name="about" options={{ headerShown: false }} /> 
+      </Stack> */}
 
       <Tabs
         screenOptions={{
@@ -154,6 +159,15 @@ const TabLayout = () => {
                 focused={focused}
               />
             ),
+          }}
+        />
+        <Tabs.Screen
+          name="about"
+
+          options={{
+            title: "About",
+            tabBarButton: () => null, // This will hide the tab from the navigation bar
+            headerShown: false
           }}
         />
       </Tabs>
