@@ -92,7 +92,7 @@ const History = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView className="px-4 my-6">
-        <Text className="text-2xl text-white font-psemibold">Upload Video</Text>
+        {/* <Text className="text-2xl text-white font-psemibold">Upload Video</Text> */}
 
         {/* <FormField
           title="Video Title"

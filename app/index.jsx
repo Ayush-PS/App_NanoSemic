@@ -131,8 +131,8 @@ const styles = StyleSheet.create({
     paddingRight: 20,
   },
   himg: {
-    width: 55,
-    height: 55,
+    width: 50,
+    height: 50,
     borderRadius: 40,
     marginRight: 20,
   },
